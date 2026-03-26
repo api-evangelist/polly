@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/polly/json-schema/resilience-pipeline-configuration.json",
+  "title": "Polly Resilience Pipeline Configuration",
+  "description": "JSON Schema for Polly v8+ resilience pipeline configuration used in .NET applications with Microsoft.Extensions.Resilience.",
+  "type": "object",
+  "properties": {
+    "ResiliencePipelines": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/PipelineConfiguration"
+      },
+      "description": "Named resilience pipeline configurations."
+    }
+  },
+  "$defs": {
+    "PipelineConfiguration": {
+      "type": "object",
+      "properties": {
+        "Retry": {
+          "$ref": "#/$defs/RetryStrategyOptions"
+        },
+        "CircuitBreaker": {
+          "$ref": "#/$defs/CircuitBreakerStrategyOptions"
+        },
+        "Timeout": {
+          "$ref": "#/$defs/TimeoutStrategyOptions"
+        },
+        "RateLimiter": {
+          "$ref": "#/$defs/RateLimiterStrategyOptions"
+        },
+        "Hedging": {
+          "$ref": "#/$defs/HedgingStrategyOptions"
+        },
+        "Fallback": {
+          "$ref": "#/$defs/FallbackStrategyOptions"
+        }
+      }
+    },
+    "RetryStrategyOptions": {
+      "type": "object",
+      "properties": {
+        "MaxRetryAttempts": {
+          "type": "integer",
+          "default": 3,
+          "description": "Maximum number of retry attempts."
+        },
+        "Delay": {
+          "type": "string",
+          "default": "00:00:02",
+          "description": "Base delay between retries (TimeSpan format)."
+        },
+        "MaxDelay": {
+          "type": "string",
+          "description": "Maximum delay cap (TimeSpan format)."
+        },
+        "BackoffType": {
+          "type": "string",
+          "enum": ["Constant", "Linear", "Exponential"],
+          "default": "Constant",
+          "description": "Type of backoff strategy."
+        },
+        "UseJitter": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to add jitter to retry delays."
+        }
+      }
+    },
+    "CircuitBreakerStrategyOptions": {
+      "type": "object",
+      "properties": {
+        "FailureRatio": {
+          "type": "number",
+          "default": 0.1,
+          "description": "Failure ratio threshold to trip the circuit."
+        },
+        "MinimumThroughput": {
+          "type": "integer",
+          "default": 100,
+          "description": "Minimum number of actions in the sampling duration."
+        },
+        "SamplingDuration": {
+          "type": "string",
+          "default": "00:00:30",
+          "description": "Duration of the sampling window (TimeSpan format)."
+        },
+        "BreakDuration": {
+          "type": "string",
+          "default": "00:00:05",
+          "description": "Duration the circuit remains open (TimeSpan format)."
+        }
+      }
+    },
+    "TimeoutStrategyOptions": {
+      "type": "object",
+      "properties": {
+        "Timeout": {
+          "type": "string",
+          "default": "00:00:30",
+          "description": "Timeout duration (TimeSpan format)."
+        }
+      }
+    },
+    "RateLimiterStrategyOptions": {
+      "type": "object",
+      "properties": {
+        "PermitLimit": {
+          "type": "integer",
+          "default": 1000,
+          "description": "Maximum number of permits."
+        },
+        "QueueLimit": {
+          "type": "integer",
+          "default": 0,
+          "description": "Maximum number of queued permits."
+        },
+        "Window": {
+          "type": "string",
+          "default": "00:01:00",
+          "description": "Time window for rate limiting (TimeSpan format)."
+        }
+      }
+    },
+    "HedgingStrategyOptions": {
+      "type": "object",
+      "properties": {
+        "MaxHedgedAttempts": {
+          "type": "integer",
+          "default": 1,
+          "description": "Maximum number of hedged attempts."
+        },
+        "Delay": {
+          "type": "string",
+          "default": "00:00:02",
+          "description": "Delay before launching a hedged attempt (TimeSpan format)."
+        }
+      }
+    },
+    "FallbackStrategyOptions": {
+      "type": "object",
+      "properties": {
+        "FallbackAction": {
+          "type": "string",
+          "description": "Name or reference to the fallback action handler."
+        }
+      }
+    }
+  }
+}

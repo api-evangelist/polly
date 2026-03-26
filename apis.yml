@@ -41,7 +41,10 @@ apis:
       - Timeout
       - Microservices
       - C#
-    properties: []
+    properties:
+      - type: JSONSchema
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/polly/refs/heads/main/json-schema/resilience-pipeline-configuration.json
 common:
   - type: Website
     url: https://www.thepollyproject.org
