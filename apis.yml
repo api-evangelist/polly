@@ -8,15 +8,15 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Resilience
-  - Fault Tolerance
   - .NET
-  - Circuit Breaker
-  - Retry
-  - Rate Limiter
-  - Timeout
-  - Microservices
   - C#
+  - Circuit Breaker
+  - Fault Tolerance
+  - Microservices
+  - Rate Limiter
+  - Resilience
+  - Retry
+  - Timeout
 url: >-
   https://raw.githubusercontent.com/api-evangelist/polly/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -32,15 +32,15 @@ apis:
       thread-safe manner.
     humanURL: https://www.thepollyproject.org
     tags:
-      - Resilience
-      - Fault Tolerance
       - .NET
-      - Circuit Breaker
-      - Retry
-      - Rate Limiter
-      - Timeout
-      - Microservices
       - C#
+      - Circuit Breaker
+      - Fault Tolerance
+      - Microservices
+      - Rate Limiter
+      - Resilience
+      - Retry
+      - Timeout
     properties:
       - type: JSONSchema
         url: >-
