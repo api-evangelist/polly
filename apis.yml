@@ -58,7 +58,7 @@ common:
     url: https://www.nuget.org/packages/Polly
   - type: Issues
     url: https://github.com/App-vNext/Polly/issues
-  - type: Releases
+  - type: ReleaseNotes
     url: https://github.com/App-vNext/Polly/releases
 maintainers:
   - FN: Kin Lane
