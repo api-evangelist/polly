@@ -46,6 +46,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/polly/refs/heads/main/json-schema/resilience-pipeline-configuration.json
 common:
+  - type: DomainSecurity
+    url: security/polly-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/pollyex
   - type: Website
