@@ -7,15 +7,20 @@ description: >-
   manner. A .NET Foundation member project.
 type: Index
 deliveryModel:
-  model: unknown
-  open_source: false
+  model: self-hosted
+  license: BSD-3-Clause
+  license_evidence:
+    repo: app-vnext/polly
+    spdx: BSD-3-Clause
+    stars: 14235
+  open_source: true
   commercial: false
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: Self-hosted open source · you run it yourself
+  confidence: medium
   source:
-  - none
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
