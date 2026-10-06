@@ -48,7 +48,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/polly/refs/heads/main/apis.yml
 created: '2026-03-26'
-modified: '2026-03-26'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: polly:polly
@@ -74,6 +74,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/polly/refs/heads/main/json-schema/resilience-pipeline-configuration.json
 common:
+  - url: https://thepollyproject.org/feed
+    type: BlogRSS
   - type: DomainSecurity
     url: security/polly-domain-security.yml
   - type: LinkedIn
