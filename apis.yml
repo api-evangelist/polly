@@ -74,6 +74,12 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/polly/refs/heads/main/json-schema/resilience-pipeline-configuration.json
 common:
+  - type: Plans
+    url: plans/polly-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/polly-rate-limits.yml
+  - type: FinOps
+    url: finops/polly-finops.yml
   - url: https://thepollyproject.org/feed
     type: BlogRSS
   - type: DomainSecurity
